@@ -1,0 +1,8 @@
+/*
+8 kyu Bin to Decimal
+Complete the function which converts a binary number (given as a string) to a decimal number.
+*/
+
+function binToDec(bin){
+  return bin.split("").reverse().reduce((a,b,ind) => +b ? a+(2**ind) : a+0,0)
+}
