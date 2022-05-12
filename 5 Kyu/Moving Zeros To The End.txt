@@ -1,0 +1,14 @@
+/*
+5kyu Moving Zeros to the End
+Write an algorithm that takes an array and moves all of the zeros to the end, preserving the order of the other elements.
+*/
+
+//solution
+
+function moveZeros(arr) {
+  return arr.sort((a,b) => {
+    if(a !==0 && b !==0) return 0
+    else if(a !==0) return -1
+    else return 1
+  })
+}

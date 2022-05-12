@@ -1,0 +1,15 @@
+/*
+6 kyu
+Build Tower
+Build a pyramid-shaped tower given a positive integer number of floors. A tower block is represented with "*" character.
+*/
+
+function towerBuilder(nFloors) {
+  let arr = new Array()
+  for(let i = 0;i < nFloors;++i) 
+    {
+      let stars = '*'.repeat(((nFloors-i)*2)-1)
+      arr.push(' '.repeat(i) + stars + ' '.repeat(i))
+     }
+  return arr.reverse()
+}

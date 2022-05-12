@@ -1,0 +1,19 @@
+/*
+7 kyu
+Regex validate PIN code
+ATM machines allow 4 or 6 digit PIN codes and PIN codes cannot contain anything but exactly 4 digits or exactly 6 digits.
+
+If the function is passed a valid PIN string, return true, else return false.
+*/
+
+function validatePIN (pin) {
+  //return true or false
+  let str = pin.toString()
+  let testString = "1234567890"
+  if(str.length !=4 && str.length != 6) return false
+  for(let i = 0; i < str.length;++i)
+    {
+      if(!testString.includes(str[i])) return false
+    }
+  return true
+}
