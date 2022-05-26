@@ -1,0 +1,23 @@
+/*
+5 kyu
+Valid Parentheses
+Write a function that takes a string of parentheses, and determines if the order of the parentheses is valid. The function should return true if the string is valid, and false if it's invalid.
+*/
+
+function validParentheses(parens) {
+  let p = parens.split('')
+  if(p.length==0) return true
+  else if(p[0] != '(') return false
+  
+  let start = 0
+  let end = 0
+  let test = true
+  p.forEach( b => {
+    b=='(' ? ++start : ++end
+    if(end > start) test = false
+  })
+
+  if(start != end) return false
+
+  return test
+}
