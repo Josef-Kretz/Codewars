@@ -1,0 +1,12 @@
+/*
+6 kyu
+Find the odd int
+Given an array of integers, find the one that appears an odd number of times.
+There will always be only one integer that appears an odd number of times.
+*/
+
+function findOdd(A) {
+  let t = A
+  t = t.sort().filter(num => ((t.lastIndexOf(num) - t.indexOf(num))%2) === 0)
+  return +t[0]
+}
