@@ -1,0 +1,15 @@
+/*
+6 kyu
+Unique In Order
+Implement the function unique_in_order which takes as argument a sequence and returns a list of items without any elements with the same value next to each other and preserving the original order of elements.
+*/
+
+var uniqueInOrder=function(iterable){
+  let chars = typeof iterable === 'string' ? iterable.split('') : iterable.slice()
+  let newArr = []
+  chars.forEach( (el, ind, arr) => {
+    if(ind === 0) newArr.push(el)
+    else if(newArr[newArr.length-1] != el) newArr.push(el)
+  })
+  return newArr.slice()
+}
